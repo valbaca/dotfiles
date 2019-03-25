@@ -1,0 +1,66 @@
+[user]
+    name = Val Baca
+    email = valbaca@gmail.com
+[color]
+    ui = auto
+[alias]
+    git = !exec git
+    f = fetch
+    fo = fetch origin
+    st = status --short --branch
+    si = status --ignored
+    ci = commit
+    co = checkout
+    br = branch
+    df = diff
+    dc = diff --cached
+    dn = diff --name-only
+    dw = diff --color-words
+    dfn = diff --name-only
+    sq = merge --squash
+    cob = checkout -b
+    cm = commit -a -m
+    ammend = commit --ammend
+    pr = pull --rebase
+    pro = pull --rebase origin
+    prom = pull --rebase origin master
+    scan = clean -ndx
+    nuke = clean -fdx
+    # cute/rare stuff
+    learn = blame
+    branch-name = !git rev-parse --abbrev-ref HEAD
+    force-push = !git push --set-upstream origin $(git branch-name)
+    top-files = !git log --pretty=format: --name-only | sort | uniq -c | sort -g
+    supergrep = !git rev-list --all | xargs git grep
+    # git-number: https://github.com/holygeek/git-number
+    n = number
+    nu = number --column -s
+    ns = number --column
+    # number command, git number -c vim 1 # opens in vim
+    nc = number -c
+    nvi = number -c vim
+    nsu = number -c subl
+    na = number add
+    # lots of log variants
+    llog = log --oneline @{upstream}..HEAD
+    llp = log -p @{upstream}..HEAD
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    # log tree
+    lt = log --graph --simplify-by-decoration --pretty=format:'%d' --all
+    # log list
+    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+    # longer log list
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    # log list no color
+    lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+    # log oneline with dates
+    lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+    # short git log
+    le = log --oneline --decorate
+    # quick good log
+    l = log --graph --oneline --decorate --date=relative --all
+    filelog = log -u
+    fl = log -u
+[core]
+    excludesfile = ~/.gitignore_global
+    pager = less -FMRiX

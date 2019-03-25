@@ -1,0 +1,9 @@
+# vim: set ft=sh:
+alias g=git
+alias po=popd
+alias resource="source ~/.zshrc"
+alias l1='ls -1'
+alias lr='ls -lart1'
+alias vin='vim -c "NERDTree"'
+alias lt='less -eMQRin `ls -t | head -n 20`'
+alias joinlines="tr '\n' ' '"
