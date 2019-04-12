@@ -1,3 +1,7 @@
+[core]
+    excludesfile = ~/.gitignore_global
+    pager = less -FMRiX
+    editor = /usr/bin/vim
 [user]
     name = Val Baca
     email = valbaca@gmail.com
@@ -61,6 +65,3 @@
     l = log --graph --oneline --decorate --date=relative --all
     filelog = log -u
     fl = log -u
-[core]
-    excludesfile = ~/.gitignore_global
-    pager = less -FMRiX

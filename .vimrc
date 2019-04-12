@@ -15,17 +15,23 @@ Plugin 'vim-syntastic/syntastic'    " syntax checking
 Plugin 'tpope/vim-surround'     " work with ({[]})
 Plugin 'dikiaap/minimalist'     " good colorscheme
 Plugin 'davidhalter/jedi-vim'   " Python
-"Plugin 'SirVer/ultisnips'       " Code snippets
+Plugin 'SirVer/ultisnips'       " Code snippets
 " https://github.com/Shougo/deoplete.nvim/wiki/Completion-Sources
 " Go
 Plugin 'fatih/vim-go'           " Go
 Plugin 'AndrewRadev/splitjoin.vim' " Go structs
-" Go Autocomplete. First do `pip3 install pynvim`
+
+"Plugin 'Shougo/neocomplete.vim'
+"Plugin 'Shougo/neosnippet.vim'
+
+" BEGIN Go Autocomplete. First do `pip3 install pynvim`
 Plugin 'Shougo/deoplete.nvim'
 Plugin 'roxma/nvim-yarp'
 Plugin 'roxma/vim-hug-neovim-rpc'
 Plugin 'stamblerre/gocode', {'rtp': 'vim/'} " gocode autocomplete
 Plugin 'deoplete-plugins/deoplete-go'   " deoplete for go
+" END
+
 call vundle#end()
 
 " Basics & Fixes
@@ -66,7 +72,7 @@ inoremap <S-Tab> <C-D>
 " have backspace work as expected
 set backspace=2
 " take lag out of Esc
-set timeout timeoutlen=1000 ttimeoutlen=10
+set timeout timeoutlen=200 ttimeoutlen=10
 " don't auto newline at 80 chars
 set textwidth=0
 " stop asking to load files (reload manually with :e)
@@ -113,7 +119,7 @@ let g:ctrlp_custom_ignore = {
 " no max file count
 let g:ctrlp_max_files=0
 " but don't go into a black hole
-let g:ctrlp_max_depth=40
+let g:ctrlp_max_depth=20
 
 " NERDTree
 let g:NERDTreeIgnore=['\~$']
@@ -145,8 +151,8 @@ let g:go_auto_sameids = 1
 "autocmd FileType go nmap <leader>b  <Plug>(go-build)
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
 autocmd FileType go nmap <leader>t  <Plug>(go-test)
-autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
-autocmd FileType go nmap <Leader>i <Plug>(go-info)
+autocmd FileType go nmap <leader>c <Plug>(go-coverage-toggle)
+autocmd FileType go nmap <leader>i <Plug>(go-import)
 " run :GoBuild or :GoTestCompile based on the go file
 function! s:build_go_files()
   let l:file = expand('%')
