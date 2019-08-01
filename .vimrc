@@ -15,7 +15,8 @@ Plugin 'vim-syntastic/syntastic'    " syntax checking
 Plugin 'tpope/vim-surround'     " work with ({[]})
 Plugin 'dikiaap/minimalist'     " good colorscheme
 Plugin 'davidhalter/jedi-vim'   " Python
-Plugin 'SirVer/ultisnips'       " Code snippets
+Plugin 'SirVer/ultisnips'       " Code snippets engine
+Plugin 'honza/vim-snippets'     " Community code snippets
 " https://github.com/Shougo/deoplete.nvim/wiki/Completion-Sources
 " Go
 Plugin 'fatih/vim-go'           " Go
@@ -130,8 +131,12 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
-" " UtilSnips fix
-" let g:UltiSnipsUsePythonVersion = 3
+" UtilSnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" let g:UltiSnipsUsePythonVersion = 3  " Python fix 
+
 
 " deoplete
 " let g:deoplete#enable_at_startup = 1
