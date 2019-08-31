@@ -133,6 +133,8 @@ set foldcolumn=0
 " remove special treatment of #
 set cinkeys-=0#
 set indentkeys-=0#
+" fd in insert is ESC (like spacemacs)
+inoremap fd <Esc>
 
 " CtrlP
 " ctrl-l invokes CtrlP plugin
