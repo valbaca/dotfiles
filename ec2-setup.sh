@@ -16,5 +16,5 @@ echo "Install misc programs"
 sudo yum install tree
 
 echo "Install dotfiles"
-~/dotfiles/install.sh
+~/dotfiles/core-setup.sh
 

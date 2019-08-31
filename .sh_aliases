@@ -1,11 +1,15 @@
 # vim: set ft=sh:
 alias g=git
 alias po=popd
-alias resource="source ~/.zshrc"
+alias resource="source ~/.bashrc"
 alias l1='ls -1'
 alias lr='ls -lart1'
 alias vin='vim -c "NERDTree"'
 alias lt='less -eMQRin `ls -t | head -n 20`'
 alias joinlines="tr '\n' ' '"
+alias tnew='tmux set-option -g history-limit 9999 \; new-session -s'
 alias tls='tmux ls'
 alias tat='tmux a -t'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
