@@ -1,0 +1,26 @@
+Basics:
+- sudo apt update && sudo apt upgrade
+- install Chrome
+- sudo apt install build-essential git curl vim make terminator openjdk-8-jdk python3 python3-pip
+- setup ssh-keys with github.com
+- install [Vundle](https://github.com/VundleVim/Vundle.vim)
+- install my [dotfiles](https://github.com/valbaca/dotfiles)
+- install Vundle plugins into vim: :PluginInstall
+- install [git-number](https://github.com/holygeek/git-number)
+
+Clojure:
+- TODO
+
+Crystal:
+- https://crystal-lang.org/install/
+- Ubuntu:
+    sudo apt install libssl-dev libxml2-dev libyaml-dev libgmp-dev libreadline-dev libz-dev
+    curl -sSL https://dist.crystal-lang.org/apt/setup.sh | sudo bash
+    sudo apt install crystal
+
+Go:
+- TODO
+
+Node.js:
+- sudo apt install nodejs npm
+- install [nvm](https://github.com/nvm-sh/nvm)
