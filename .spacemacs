@@ -31,11 +31,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     ;; Custom layers
      clojure
-     (git :variables
-          git-magit-status-fullscreen t)
-     smex
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -45,7 +41,7 @@ values."
      auto-completion
      better-defaults
      emacs-lisp
-     ;; git
+     git
      markdown
      org
      (shell :variables
