@@ -2,6 +2,7 @@
 set nocp
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.fzf
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'                " NERDTree
@@ -42,6 +43,9 @@ Plugin 'venantius/vim-cljfmt'               " Clojure format
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'wincent/terminus'   " change cursor to block in visual & pipe in insert
+Plugin 'dikiaap/minimalist'     " good colorscheme
+Plugin 'rhysd/vim-crystal'      " Crystal
+Plugin 'elorest/vim-slang'      " Crystal syntax highlighting
 call vundle#end()
 
 " Basics & Fixes
@@ -83,6 +87,8 @@ match ErrorMsg '\s\+$'
 vmap <Tab> >gv
 vmap <S-Tab> <gv
 inoremap <S-Tab> <C-D>
+" kj as a faster Esc
+inoremap kj <ESC>
 " have backspace work as expected
 set backspace=2
 " take lag out of Esc
@@ -196,6 +202,8 @@ autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 " Other common filetype specifiers
 augroup configgroup
     autocmd!
+    " Python uses # for comments
+    autocmd FileType python setlocal commentstring=#\ %s
     " 2-space indention: ruby
     autocmd FileType ruby setlocal tabstop=2
     autocmd FileType ruby setlocal shiftwidth=2
@@ -204,8 +212,14 @@ augroup configgroup
     autocmd FileType ruby setlocal tabstop=2
     " # for comments: ruby and python
     autocmd FileType ruby setlocal commentstring=#\ %s
-    autocmd FileType python setlocal commentstring=#\ %s
-    " Tabs indentation: Makefile and Go
+    " Crystal uses 2-spaces too
+    autocmd FileType crystal setlocal tabstop=2
+    autocmd FileType crystal setlocal shiftwidth=2
+    autocmd FileType crystal setlocal softtabstop=2
+    autocmd FileType crystal setlocal expandtab
+    autocmd FileType crystal setlocal commentstring=#\ %s
+    autocmd FileType crystal setlocal tabstop=2
+    " Tabs only: Makefile and Go
     autocmd BufEnter Makefile setlocal noexpandtab
     autocmd BufEnter go setlocal noexpandtab
     " Misc filename <=> filetype fixes
