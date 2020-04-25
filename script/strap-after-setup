@@ -4,7 +4,6 @@ brew install tree
 brew install tmux
 brew install wget
 
-sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
 # Basic, must-have apps
 brew cask install firefox
@@ -52,3 +51,5 @@ brew install crystal
 # TODO nvm/node
 # TODO golang
 
+# TODO oh-my-zsh
+# sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
