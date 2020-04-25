@@ -1,0 +1,54 @@
+#!/bin/sh
+brew install the_silver_searcher
+brew install tree
+brew install tmux
+brew install wget
+
+sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+
+# Basic, must-have apps
+brew cask install firefox
+brew cask install google-chrome
+brew cask install vlc
+brew cask install the-unarchiver
+
+# My preferred apps
+brew cask install bartender
+brew cask install copyclip
+brew cask install dropbox
+brew cask install google-drive-file-stream
+brew cask install hyperswitch
+brew cask install paintbrush
+brew cask install spectacle
+brew cask install tomighty
+
+# For fun and apps I like
+brew cask install battle-net
+brew cask install spotify
+brew cask install steam
+brew cask install coconutbattery
+brew cask install daisydisk
+brew cask install caffeine
+brew cask install discord
+
+# Basic dev tools
+brew cask install iterm2
+brew cask install visual-studio-code
+brew cask install sublime-text
+
+# Preferred dev tools
+brew cask install jetbrains-toolbox
+brew cask install mysqlworkbench
+brew cask install virtualbox
+brew cask install charles
+
+# Programming languages
+# python3, pip3, & python included
+# ruby included
+brew cask install java
+brew install clojure/tools/clojure
+brew install leiningen
+brew install crystal
+# TODO nvm/node
+# TODO golang
+

@@ -18,6 +18,18 @@ echo "source ~/.sh_aliases" >> ~/.zshrc
 echo "source ~/.sh_path" >> ~/.bashrc
 echo "source ~/.sh_path" >> ~/.zshrc
 
+echo "Setup z (jump around)"
+mkdir -p ~/Code/github
+cd ~/Code/
+git clone https://github.com/rupa/z
+cd
+echo "source ~/Code/github/z/z.sh" >> ~/.bashrc
+echo "source ~/Code/github/z/z.sh" >> ~/.zshrc
+
+
+echo "Link vimrc"
+ln -s ~/.dotfiles/.vimrc ~/.vimrc
+
 echo "Install Vundle (vim plugin manager)"
 mkdir -p ~/.vim/bundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
