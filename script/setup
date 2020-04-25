@@ -23,15 +23,12 @@ ln -s ~/.dotfiles/.sh_path ~/.sh_path
 
 
 echo "Source shell aliases and path"
-echo "source ~/.sh_aliases" >> ~/.bashrc
 echo "source ~/.sh_aliases" >> ~/.zshrc
-echo "source ~/.sh_path" >> ~/.bashrc
 echo "source ~/.sh_path" >> ~/.zshrc
 
 echo "Setup z (jump around)"
 mkdir -p ~/Code/github
 git clone https://github.com/rupa/z ~/Code/github/z
-echo "source ~/Code/github/z/z.sh" >> ~/.bashrc
 echo "source ~/Code/github/z/z.sh" >> ~/.zshrc
 
 
@@ -60,5 +57,6 @@ echo "Linking spacemacs config"
 cd ~
 [[ -f ~/.spacemacs ]] && mv ~/.spacemacs ~/.spacemacs.bk
 ln -s ~/.dotfiles/.spacemacs ~/.spacemacs
+
 
 echo "script/setup DONE"
