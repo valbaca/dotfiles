@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# cli tools
+echo "Installing cli tools"
 brew install hub # GitHub tasks
 brew install mosh # mosh > ssh
 brew install the_silver_searcher # ag is a super-fast grep alternative
@@ -9,14 +9,14 @@ brew install tmux # tmux > screen
 brew install youtube-dl
 brew install wget
 
-# Essential apps
+echo "Installing essential apps"
 brew cask install firefox
 brew cask install google-chrome
 brew cask install microsoft-office
 brew cask install the-unarchiver
 brew cask install vlc
 
-# Useful apps
+echo "Installing useful apps"
 brew cask install alfred # genera
 brew cask install balenaetcher # install linux .iso to flash drives
 brew cask install bartender # hides status bar icons (minimalism)
@@ -36,18 +36,18 @@ brew cask install slack
 brew cask install spectacle # window management
 brew cask install tomighty # pomodoro to help focus
 
-# Games & Music
+echo "Installing games and music"
 brew cask install battle-net
 open /usr/local/Caskroom/battle-net-/latest/Battle.net-Setup.app
 brew cask install spotify
 brew cask install steam
 
-# Essential dev apps
+echo "Installing essential dev apps"
 brew cask install iterm2
 brew cask install sublime-text
 brew cask install visual-studio-code
 
-# Useful dev apps
+echo "Installing useful dev apps"
 brew cask install charles # http proxy debugging
 brew cask install dash # api docs
 brew cask install jetbrains-toolbox
@@ -55,11 +55,11 @@ brew cask install mysqlworkbench
 brew cask install postman # api development
 brew cask install transmit # ftp client
 
-# Quick Look plugins for code
+echo "Installing Quick Look plugins"
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize\
     suspicious-package quicklookase qlvideo
 
-# Programming languages
+echo "Installing programming languages"
 # macOS includes: ruby, python3, pip3, & python (python 2)
 brew cask install java
 brew install clojure/tools/clojure
@@ -70,7 +70,7 @@ brew install yarn # yarn is a better npm, plus yarn installs npm
 
 # yarn
 yarn global add tldr # tldr is like man pages for humans
-tldr --update 
+tldr --update
 # more npm/yarn to come...
 
 echo "Generating SSH key (hit Enter when prompted)"
@@ -82,6 +82,7 @@ then
 fi
 
 # Programs with post-install instructions
+echo "Installing apps that have post-install instructions"
 brew cask install virtualbox
 
 echo "Copy and paste the following to install oh-my-zsh:"
