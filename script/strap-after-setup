@@ -1,55 +1,71 @@
 #!/bin/sh
-brew install the_silver_searcher
+
+# non-cask installs
+brew install hub # GitHub tasks
+brew install mosh # mosh > ssh
+brew install the_silver_searcher # ag is a super-fast grep alternative
 brew install tree
-brew install tmux
+brew install tmux # tmux > screen
 brew install wget
 
-
-# Basic, must-have apps
+# Essential apps
 brew cask install firefox
 brew cask install google-chrome
-brew cask install vlc
+brew cask install microsoft-office
 brew cask install the-unarchiver
+brew cask install vlc
 
-# My preferred apps
-brew cask install bartender
-brew cask install copyclip
+# Useful apps
+brew cask install alfred # genera
+brew cask install balenaetcher # install linux .iso to flash drives
+brew cask install bartender # hides status bar icons (minimalism)
+brew cask install caffeine # turn off auto-sleep
+brew cask install coconutbattery # gives battery capacity & history
+brew cask install copyclip # clipboard history
+brew cask install daisydisk # shows disk usage
+brew cask install discord # chat
 brew cask install dropbox
 brew cask install google-drive-file-stream
-brew cask install hyperswitch
-brew cask install paintbrush
-brew cask install spectacle
-brew cask install tomighty
+brew cask install hyperswitch # "fixes" alt-tab
+brew cask install paintbrush # like mspaint
+brew cask install spectacle # window management
+brew cask install tomighty # pomodoro to help focus
 
-# For fun and apps I like
+# Games & Music
 brew cask install battle-net
+open /usr/local/Caskroom/battle-net-/latest/Battle.net-Setup.app
 brew cask install spotify
 brew cask install steam
-brew cask install coconutbattery
-brew cask install daisydisk
-brew cask install caffeine
-brew cask install discord
 
-# Basic dev tools
+# Essential dev apps
 brew cask install iterm2
-brew cask install visual-studio-code
 brew cask install sublime-text
+brew cask install visual-studio-code
 
-# Preferred dev tools
+# Useful dev tools
+brew cask install charles # http proxy debugging
 brew cask install jetbrains-toolbox
 brew cask install mysqlworkbench
-brew cask install virtualbox
-brew cask install charles
+brew cask install postman
+brew cask install transmit
 
 # Programming languages
-# python3, pip3, & python included
-# ruby included
+# macOS includes: ruby, python3, pip3, & python (python 2)
 brew cask install java
 brew install clojure/tools/clojure
-brew install leiningen
+brew install leiningen # clojure super-tool
 brew install crystal
-# TODO nvm/node
-# TODO golang
+brew install golang
+brew install yarn # yarn is a better npm, and yarn installs npm
 
-# TODO oh-my-zsh
-# sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+# yarn
+yarn global add tldr # tldr is like man pages for humans
+tldr --update 
+
+# Programs with post-install instructions
+brew cask install virtualbox
+
+echo "Copy and paste the following to install oh-my-zsh:"
+echo "\$ sh -c \"\$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)\""
+echo "script/strap-after-setup DONE"
+echo "look above for post-install instructions and below"
