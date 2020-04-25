@@ -1,10 +1,18 @@
 #!/bin/sh
 
 # Script to setup these dotfiles
-# Run after the dotfiles are copied
 # Then strap-after-setup is run
+cd ~
+echo "Link git config & git ignores"
+ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
+ln -s ~/.dotfiles/.gitignore_global ~/.gitignore_global
 
-echo "Setting up shell aliases and path"
+echo "Link shell aliases and path"
+ln -s ~/.dotfiles/.sh_aliases ~/.sh_aliases
+ln -s ~/.dotfiles/.sh_path ~/.sh_path
+
+
+echo "Source shell aliases and path"
 echo "source ~/.sh_aliases" >> ~/.bashrc
 echo "source ~/.sh_aliases" >> ~/.zshrc
 echo "source ~/.sh_path" >> ~/.bashrc
@@ -28,6 +36,9 @@ mv .emacs.d .emacs.d.bak
 mv .emacs .emacs.bak
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
+echo "Link spacemacs config"
+ln -s ~/.dotfiles/.spacemacs ~/.spacemacs
+
 echo "Download, build, & install mosh (assumes build tools installed)"
 curl https://mosh.org/mosh-1.3.2.tar.gz -o ~/mosh.tar.gz
 tar -xzf ~/mosh.tar.gz
@@ -43,4 +54,4 @@ nvm install node
 echo "Install tldr"
 npm install tldr
 
-echo "DONE"
+echo "script/setup DONE"
