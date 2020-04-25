@@ -5,6 +5,12 @@
 [user]
     name = Val Baca
     email = valbaca@gmail.com
+[github]
+	user = valbaca
+[push]
+	default = simple
+[credential]
+	helper = osxkeychain
 [color]
     ui = auto
 [alias]

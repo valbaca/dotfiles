@@ -49,6 +49,10 @@ brew cask install mysqlworkbench
 brew cask install postman
 brew cask install transmit
 
+# Quick Look plugins for code
+brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize\
+    suspicious-package quicklookase qlvideo
+
 # Programming languages
 # macOS includes: ruby, python3, pip3, & python (python 2)
 brew cask install java

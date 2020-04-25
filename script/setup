@@ -2,6 +2,10 @@
 
 # Script to setup these dotfiles
 # Then strap-after-setup is run
+
+# Notes:
+# mkdir -p creates folders recursively & safely
+# ln -s <existing real file> <new symlink location>
 cd ~
 echo "creating ~/bin for scripts"
 mkdir -p ~/bin
@@ -9,6 +13,7 @@ echo "creating ~/Code for code"
 mkdir -p ~/Code/go
 
 echo "Link git config & git ignores"
+[[ -f ~/.gitconfig ]] && mv ~/.gitconfig ~/.gitconfig.bk
 ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/.gitignore_global ~/.gitignore_global
 
@@ -25,14 +30,13 @@ echo "source ~/.sh_path" >> ~/.zshrc
 
 echo "Setup z (jump around)"
 mkdir -p ~/Code/github
-cd ~/Code/
-git clone https://github.com/rupa/z
-cd
+git clone https://github.com/rupa/z ~/Code/github/z
 echo "source ~/Code/github/z/z.sh" >> ~/.bashrc
 echo "source ~/Code/github/z/z.sh" >> ~/.zshrc
 
 
 echo "Link vimrc"
+[[ -f ~/.vimrc ]] && mv ~/.vimrc ~/.vimrc.bk
 ln -s ~/.dotfiles/.vimrc ~/.vimrc
 
 echo "Install Vundle (vim plugin manager)"
@@ -42,18 +46,19 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 echo "Installing Vundle plugins"
 vim +PluginInstall +qall
 
-echo "Installing emacs"
+echo "Installing emacs-plus"
 brew tap d12frosted/emacs-plus
 brew install emacs-plus
 brew linkapps emacs-plus
 
 echo "Install spacemacs (assumes emacs is installed)"
-cd ~
-mv .emacs.d .emacs.d.bak
-mv .emacs .emacs.bak
+[[ -d ~/.emacs.d ]] && mv .emacs.d .emacs.d.bak
+[[ -f ~/.emacs ]] && mv .emacs .emacs.bak
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
-echo "Link spacemacs config"
+echo "Linking spacemacs config"
+cd ~
+[[ -f ~/.spacemacs ]] && mv ~/.spacemacs ~/.spacemacs.bk
 ln -s ~/.dotfiles/.spacemacs ~/.spacemacs
 
 echo "script/setup DONE"
